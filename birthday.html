@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Shriya ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+    color: #333;
+}
+
+/* Start Screen */
+.start-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+    z-index: 9999;
+    cursor: pointer;
+}
+.start-box {
+    background: white;
+    padding: 35px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+.start-box h1 { color: #b30059; }
+
+/* Sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+h1 {
+    color: #b30059;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* ================= LETTER DECORATION ================= */
+
+#letter {
+    background: linear-gradient(180deg, #fff0f5, #ffe6ee);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft floating flowers */
+#letter::before,
+#letter::after {
+    content: "🌸";
+    position: absolute;
+    font-size: 60px;
+    opacity: 0.15;
+    animation: floatSlow 12s infinite linear;
+}
+#letter::before {
+    top: 10%;
+    left: 5%;
+}
+#letter::after {
+    bottom: 10%;
+    right: 5%;
+}
+
+/* Letter Card */
+.letter-card {
+    position: relative;
+    background: #fffdfd;
+    border-radius: 28px;
+    padding: 40px 35px;
+    max-width: 700px;
+    box-shadow:
+        0 15px 35px rgba(179, 0, 89, 0.25),
+        inset 0 0 0 2px rgba(255, 182, 193, 0.6);
+    animation: letterAppear 2s ease;
+}
+
+/* Decorative corners */
+.letter-card::before,
+.letter-card::after {
+    content: "❀";
+    position: absolute;
+    font-size: 28px;
+    color: #ff99bb;
+}
+.letter-card::before {
+    top: 15px;
+    left: 20px;
+}
+.letter-card::after {
+    bottom: 15px;
+    right: 20px;
+}
+
+/* Letter text */
+#letterText {
+    font-size: 1.18em;
+    line-height: 1.9;
+    color: #444;
+}
+
+/* ================= OTHER SECTIONS ================= */
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    max-width: 650px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Slideshow */
+.slideshow-container {
+    width: 90%;
+    max-width: 420px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+.slide img {
+    width: 100%;
+    border-radius: 20px;
+}
+.caption {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    animation: float 6s linear forwards;
+}
+
+/* Elegant Confetti */
+.confetti {
+    position: fixed;
+    top: -20px;
+    pointer-events: none;
+    opacity: 0.8;
+    animation: elegantFall 10s linear forwards;
+}
+
+/* Animations */
+@keyframes letterAppear {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+@keyframes elegantFall {
+    from { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    to { transform: translateY(110vh) rotate(180deg); opacity: 0; }
+}
+@keyframes floatSlow {
+    from { transform: translateY(0); }
+    to { transform: translateY(-40px); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Start -->
+<div class="start-screen" onclick="startExperience()">
+    <div class="start-box">
+        <h1>For Shriya ❤️</h1>
+        <p>Tap to begin</p>
+    </div>
+</div>
+
+<!-- LETTER -->
+<section id="letter">
+    <h1>My Heartfelt Letter 💌</h1>
+    <div class="letter-card">
+        <div id="letterText"></div>
+    </div>
+</section>
+
+<!-- Memory Lane -->
+<section>
+    <h1>Memories 📸</h1>
+    <div class="slideshow-container">
+        <div class="slides" id="slides">
+            <div class="slide"><img src="photo1.jpeg"><div class="caption">Our first trip 🌸</div></div>
+            <div class="slide"><img src="photo2.jpeg"><div class="caption">😄</div></div>
+            <div class="slide"><img src="photo3.jpeg"><div class="caption">❤️</div></div>
+            <div class="slide"><img src="photo4.jpeg"><div class="caption">🥰</div></div>
+            <div class="slide"><img src="photo5.jpeg"><div class="caption">One happy day 🎉</div></div>
+            <div class="slide"><img src="photo6.jpeg"><div class="caption">❤️</div></div>
+            <div class="slide"><img src="photo7.jpeg"><div class="caption">🥰</div></div>
+            <div class="slide"><img src="photo8.jpeg"><div class="caption">🌹</div></div>
+            <div class="slide"><img src="photo9.jpeg"><div class="caption">😄</div></div>
+            <div class="slide"><img src="photo10.jpeg"><div class="caption">🌸</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Celebrate -->
+<section id="celebrate">
+    <h1>Celebrate 🎉</h1>
+    <div class="card">
+        <p>Today is not just another day —  
+        it’s a reminder of the light you bring into the lives around you.</p>
+
+        <p>Your smile has always had a way of making moments softer,  
+        and your presence has made ordinary days feel special.</p>
+
+        <p>May this birthday mark the beginning of a year  
+        filled with growth, peace, self-love,  
+        and moments that truly make you happy.</p>
+
+        <p>Let this celebration be gentle, joyful,  
+        and exactly as beautiful as you are.</p>
+    </div>
+</section>
+
+
+<!-- Always -->
+<section id="always">
+    <h1>Always 🌸</h1>
+    <div class="card">
+        <p>Some connections don’t need constant presence  
+        to remain meaningful.</p>
+
+        <p>What we shared will always be a part of my story —  
+        quietly, honestly, and without regret.</p>
+
+        <p>No matter where life takes you,  
+        I’ll always wish for your happiness,  
+        your peace of mind,  
+        and a future that treats you kindly.</p>
+
+        <p>Always hoping the best for you —  
+        with respect, sincerity, and warmth.</p>
+    </div>
+</section>
+
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+let currentSlide = 0;
+const captions = document.querySelectorAll(".caption");
+
+function startExperience() {
+    document.querySelector(".start-screen").style.display = "none";
+    music.volume = 0.4;
+    music.play().catch(()=>{});
+
+    setInterval(createHeart, 500);
+    setInterval(createConfetti, 900);
+    setInterval(nextSlide, 4000);
+
+    const letter = `Dear Shriya,
+
+I know things fell apart because of my insecurity
+and the way I let doubt take over.
+I understand how heavy that must have felt for you.
+
+You never deserved to feel questioned.
+I see my mistakes clearly now,
+and I’m truly sorry for the hurt I caused.
+
+Today isn’t about the past.
+It’s your birthday —
+and I wish you peace, joy,
+and a heart that feels light.
+
+Happy Birthday 🌸`;
+
+    typeWriter(letter, document.getElementById("letterText"), 30);
+}
+
+/* Typewriter */
+function typeWriter(text, el, speed){
+    let i = 0;
+    (function write(){
+        if(i < text.length){
+            el.innerHTML += text[i] === "\n" ? "<br>" : text[i];
+            i++;
+            setTimeout(write, speed);
+        }
+    })();
+}
+
+/* Hearts */
+function createHeart(){
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random()*100 + "vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}
+
+/* Confetti */
+function createConfetti(){
+    const c = document.createElement("div");
+    c.className = "confetti";
+    const shapes = ["❤️","⭐"];
+    c.innerHTML = shapes[Math.floor(Math.random()*shapes.length)];
+    c.style.left = Math.random()*100 + "vw";
+    c.style.fontSize = (Math.random()*10+14)+"px";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),10000);
+}
+
+/* Slideshow */
+function showSlide(i){
+    document.getElementById("slides").style.transform = `translateX(-${i*100}%)`;
+    captions.forEach((c,idx)=>c.style.opacity = idx===i?1:0);
+}
+function nextSlide(){
+    currentSlide = (currentSlide+1)%captions.length;
+    showSlide(currentSlide);
+}
+showSlide(currentSlide);
+</script>
+
+</body>
+</html>
