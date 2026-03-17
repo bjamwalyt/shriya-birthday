@@ -51,77 +51,25 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* ================= LETTER DECORATION ================= */
-
+/* LETTER */
 #letter {
     background: linear-gradient(180deg, #fff0f5, #ffe6ee);
     position: relative;
     overflow: hidden;
 }
 
-/* Soft floating flowers */
-#letter::before,
-#letter::after {
-    content: "🌸";
-    position: absolute;
-    font-size: 60px;
-    opacity: 0.15;
-    animation: floatSlow 12s infinite linear;
-}
-#letter::before {
-    top: 10%;
-    left: 5%;
-}
-#letter::after {
-    bottom: 10%;
-    right: 5%;
-}
-
-/* Letter Card */
 .letter-card {
-    position: relative;
     background: #fffdfd;
     border-radius: 28px;
     padding: 40px 35px;
     max-width: 700px;
-    box-shadow:
-        0 15px 35px rgba(179, 0, 89, 0.25),
-        inset 0 0 0 2px rgba(255, 182, 193, 0.6);
-    animation: letterAppear 2s ease;
+    box-shadow: 0 15px 35px rgba(179, 0, 89, 0.25);
 }
 
-/* Decorative corners */
-.letter-card::before,
-.letter-card::after {
-    content: "❀";
-    position: absolute;
-    font-size: 28px;
-    color: #ff99bb;
-}
-.letter-card::before {
-    top: 15px;
-    left: 20px;
-}
-.letter-card::after {
-    bottom: 15px;
-    right: 20px;
-}
-
-/* Letter text */
 #letterText {
     font-size: 1.18em;
     line-height: 1.9;
     color: #444;
-}
-
-/* ================= OTHER SECTIONS ================= */
-
-.card {
-    background: white;
-    border-radius: 22px;
-    padding: 30px;
-    max-width: 650px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
 /* Slideshow */
@@ -153,7 +101,7 @@ h1 {
     transition: opacity 0.5s;
 }
 
-/* Floating Hearts */
+/* Hearts */
 .heart {
     position: fixed;
     font-size: 20px;
@@ -161,31 +109,20 @@ h1 {
     animation: float 6s linear forwards;
 }
 
-/* Elegant Confetti */
 .confetti {
     position: fixed;
     top: -20px;
     pointer-events: none;
-    opacity: 0.8;
     animation: elegantFall 10s linear forwards;
 }
 
-/* Animations */
-@keyframes letterAppear {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
 @keyframes float {
-    from { transform: translateY(100vh); opacity: 1; }
-    to { transform: translateY(-10vh); opacity: 0; }
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
 }
 @keyframes elegantFall {
-    from { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-    to { transform: translateY(110vh) rotate(180deg); opacity: 0; }
-}
-@keyframes floatSlow {
-    from { transform: translateY(0); }
-    to { transform: translateY(-40px); }
+    from { transform: translateY(-10vh); }
+    to { transform: translateY(110vh); }
 }
 </style>
 </head>
@@ -208,7 +145,7 @@ h1 {
     </div>
 </section>
 
-<!-- Memory Lane -->
+<!-- Memory -->
 <section>
     <h1>Memories 📸</h1>
     <div class="slideshow-container">
@@ -216,42 +153,9 @@ h1 {
             <div class="slide"><img src="photo1.jpeg"><div class="caption">Our first trip 🌸</div></div>
             <div class="slide"><img src="photo2.jpeg"><div class="caption">😄</div></div>
             <div class="slide"><img src="photo3.jpeg"><div class="caption">❤️</div></div>
-            <div class="slide"><img src="photo4.jpeg"><div class="caption">🥰</div></div>
-            <div class="slide"><img src="photo5.jpeg"><div class="caption">One happy day 🎉</div></div>
-            <div class="slide"><img src="photo6.jpeg"><div class="caption">❤️</div></div>
-            <div class="slide"><img src="photo7.jpeg"><div class="caption">🥰</div></div>
-            <div class="slide"><img src="photo8.jpeg"><div class="caption">🌹</div></div>
-            <div class="slide"><img src="photo9.jpeg"><div class="caption">😄</div></div>
-            <div class="slide"><img src="photo10.jpeg"><div class="caption">🌸</div></div>
         </div>
     </div>
 </section>
-
-
-    </div>
-</section>
-
-
-<!-- Always -->
-<section id="always">
-    <h1>Always 🌸</h1>
-    <div class="card">
-        <p>Some connections don’t need constant presence  
-        to remain meaningful.</p>
-
-        <p>What we shared will always be a part of my story —  
-        quietly, honestly, and without regret.</p>
-
-        <p>No matter where life takes you,  
-        I’ll always wish for your happiness,  
-        your peace of mind,  
-        and a future that treats you kindly.</p>
-
-        <p>Always hoping the best for you —  
-        with respect, sincerity, and warmth.</p>
-    </div>
-</section>
-
 
 <!-- Music -->
 <audio id="bgMusic" loop>
@@ -269,22 +173,24 @@ function startExperience() {
     music.play().catch(()=>{});
 
     setInterval(createHeart, 500);
-    setInterval(createConfetti, 900);
-    setInterval(nextSlide, 4000);
+    setInterval(nextSlide, 3000);
 
     const letter = `Dear Shriya,
 
-I dont know ki kbhi yeh dekhaga bhi ya nhi but bhut yaad aati h , 
-hr time bs tumhara bara ma hi sochta rehta hu . 
+I dont know ki kbhi yeh dekhaga bhi ya nhi but bhut yaad aati h, 
+hr time bs tumhara bare me hi sochta rehta hu.
 
-I never wanted to leave
-I never wanted to end but wanting is not enough
+I never wanted to leave.
+I never wanted to end, but wanting is not enough.
+
 If wanting were enough I'd still be right here.
 
-My absence wont shake your world or bother you much but yours
-is gonna break me . I miss you in every ordinary moments in songs in empty nights.
-I miss u always.
-I dont know how but please come back madam.;
+My absence wont shake your world, but yours breaks me.
+I miss you in songs, in nights, in silence.
+
+I miss you always.
+
+Please come back madam. ❤️`;
 
     typeWriter(letter, document.getElementById("letterText"), 30);
 }
@@ -309,18 +215,6 @@ function createHeart(){
     h.style.left = Math.random()*100 + "vw";
     document.body.appendChild(h);
     setTimeout(()=>h.remove(),6000);
-}
-
-/* Confetti */
-function createConfetti(){
-    const c = document.createElement("div");
-    c.className = "confetti";
-    const shapes = ["❤️","⭐"];
-    c.innerHTML = shapes[Math.floor(Math.random()*shapes.length)];
-    c.style.left = Math.random()*100 + "vw";
-    c.style.fontSize = (Math.random()*10+14)+"px";
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),10000);
 }
 
 /* Slideshow */
